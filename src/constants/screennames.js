@@ -1,0 +1,2 @@
+export const screenNames = { SIGNIN: "SigninScreen", SIGNUP: "SignupScreen", HOME: "HomeScreen", SUMMARY: "SessionSummaryScreen", RECORDINGS: "SessionRecordingsScreen" };
+export const navigatorNames = { APP: "AppNavigator", AUTH: "AuthNavigator" };

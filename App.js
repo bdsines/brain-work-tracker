@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createTheme, ThemeProvider } from '@rneui/themed';
+import 'react-native-gesture-handler';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import RootNavigator from "./src/navigator";
+import {DataProvider} from './src/context/DataContext';
+const theme = createTheme({
+    components: {
+        Button: {
+            raised: true,
+        },
+    },
 });
+const App = () => {
+    return (
+        <DataProvider>
+
+    <ThemeProvider theme={theme}>
+        <RootNavigator />
+    </ThemeProvider>
+    </DataProvider>
+    );
+};
+export default App;
+
